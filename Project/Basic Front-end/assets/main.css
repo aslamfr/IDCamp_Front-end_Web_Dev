@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:wght@400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins',sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a2f43;
+}
+
+header {
+  display: inline;
+}
+
+header.navbar {
+  width: 100%;
+  height: 70px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #164863;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.104);
+  position: fixed;
+  z-index: 99;
+}
+
+header.navbar .logo-div {
+  font-family: 'Josefin Sans',sans-serif !important;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: auto 1em;
+}
+
+header.navbar .logo { 
+  margin: auto;
+  color: white;
+  transition: color .5s ease-in-out;
+}
+
+header.navbar .logo .cd {
+  color: #9ADE7B;
+  transition: color .5s ease-in-out;
+}
+
+header.navbar .logo:hover { 
+  color: #9ADE7B;
+  cursor: default;
+}
+
+header.navbar .logo:hover .cd {
+  color: white;
+  cursor: default;
+}
+
+header.navbar .navbar-list ul {
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 1rem;
+}
+
+header.navbar .navbar-list li {
+  list-style-type: none;
+}
+
+header.navbar .navbar-list li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: .5rem 1.5rem;
+  border-radius: 5px;
+  transition: all .2s ease-out;
+}
+
+header.navbar .navbar-list li:hover a {
+  background-color: white;
+  color: #164863;
+}
+
+/* CSS for dropdown menu */
+header.navbar .navbar-list li .dbutton {
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: .5rem 1.5rem;
+  border: transparent;
+  border-radius: 5px;
+  transition: all .2s ease-out;
+}
+
+header.navbar .navbar-list li .dbutton:hover, header.navbar .navbar-list li .dbutton:focus {
+  background-color: white;
+  color: #164863;
+  cursor: pointer;
+}
+
+header.navbar .navbar-list li .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+header.navbar .navbar-list li .drop-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header.navbar .navbar-list li .dropdown a:hover {
+  color: white;
+  background-color: #164863;
+}
+
+.show {
+  display: block;
+}
+/* Dropdown menu css end
+reference: https://www.w3schools.com/howto/howto_js_dropdown.asp */
+
+/* Hero */
+main {
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+main .page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+main .page .hero {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  background-color: #0a2f43;
+  /* background-image: url(../assets/images/collage-concept.jpg); */
+  background-size: auto;
+  text-align: center;
+  align-items: center;
+}
+
+main .page .hero .hero-content {
+  flex: 1 1;
+}
+
+main .page .hero .hero-content h1 {
+  font-size: 5rem;
+  margin: .5rem 1rem;
+  color: white;
+}
+
+main .page .hero .hero-content h2 {
+  font-size: 2rem;
+  margin: .5rem 1rem;
+  /* color: white; */
+}
+
+main .page .hero .hero-content h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: .5rem 1rem;
+  color: white;
+}
+
+main .page .design {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  background-color: #DDF2FD;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  
+}
+
+#explanation {
+  min-height: 10rem;
+}
+
+#subtitle {
+  margin: 10px auto;
+}
+
+#source {
+  font-size: 0.6em;
+  text-align: center;
+}
+
+#source-text {
+  font-size: 0.8em;
+}
+
+/* About me hero */
+#hero-about {
+  height: 100% !important;
+  padding: 15% 5% 5% 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: space-evenly;
+  background-color: #DDF2FD !important;
+  height: 100vh !important;
+}
+
+#hero-about h2 {
+  color: #0a2f43;
+}
+
+#hero-about h4 {
+  color: #164863;
+}
+
+#hero-about .hero-content {
+  width: 40%;
+  text-align: justify !important;
+}
+
+#hero-about .hero-content .social-media a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #164863;
+  transition: all .5s ease-in-out;
+  margin: .5rem 0 .5rem 1rem;
+}
+
+#hero-about .hero-content .social-media a:hover {
+  color: #9ADE7B;
+}
+
+
+/* Intro design */
+main .page .design .intro {
+  display: flex;
+  margin: 3rem auto;
+  text-align: center;
+  flex-direction: column;
+}
+
+main .page .design .intro p {
+  margin: 1rem 3rem; 
+}
+
+/* Content */
+main .page .design .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.alpha {
+  /* card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.alpha .explanation {
+  margin: 0 auto;
+  width: 100%;
+  text-align: justify;
+}
+
+.alpha .example img{
+  margin: 0 auto;
+  width: 620px;
+  border-radius: 10px;
+}
+
+/* Etc */
+#etc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-basis: 100%;
+  padding: 0 8rem;
+}
+
+#etc .explanation {
+  text-align: center;
+}
+
+#etc .explanation h2 {
+  margin: 1rem 3rem; 
+}
+
+#etc .image {
+  height: 60%;
+}
+
+#etc .image img {
+  width: 260px;
+}
+
+/* Footer */
+.page-footer {
+  width: 100%;
+  height: 20vh;
+  padding: 30px;
+  background-color: #164863;
+  text-align: center;
+  color: white;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 750px){
+  header.navbar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header.navbar .logo-div {
+    margin-top: 0.5em;
+    margin-bottom: 0.1em;
+  }
+
+  .alpha .example img {
+    width: 100%;
+  }
+
+  #hero-about {
+    padding: 35% 5% 5% 5%;
+  }
+}
+
+@media screen and (max-width: 1100px) { 
+  .alpha {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .alpha .explanation {
+    width: auto;
+  }
+
+  main .page .hero {
+    height: 60vh;
+    padding: 0 1rem;
+    overflow: auto;
+  }
+
+  #hero-about {
+    flex-direction: column;
+  }
+
+  #hero-about .hero-content {
+    width: 80%;
+    text-align: center;
+  }
+
+  #etc {
+    padding: 0;
+  }
+}

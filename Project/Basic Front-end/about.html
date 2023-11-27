@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDesign</title>
+  <link rel="stylesheet" href="assets/main.css">
+  <script src="assets/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="logo-div">
+      <p class="logo"><span class="cd">CD</span><span class="esign">esign</span></p>
+    </div>
+    <nav class="navbar-list">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li> <!-- Drop menu -->
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dbutton">Design</button>
+            <div id="dropMenu" class="drop-content">
+              <a href="index.html#glassmorph">Glassmorphism</a>
+              <a href="index.html#neumorph">Neomorphism</a>
+              <a href="index.html#memphis">Memphis</a>
+              <a href="index.html#material">Material</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page">
+      <div class="hero" id="hero-about">
+        <div class="hero-content">
+          <h2>About Me!</h2>
+          <h4>My name is Aslam Fathin Rahmat, an Electrical Engineering fresh graduates. During my time in university, I
+            participated in a front-end web development team for an event. This makes me intrested in front-end website
+            development field. Hopefully I could deepend my knowledge about front-end web development even further.
+          </h4>
+          <br>
+          <h4>My social media:</h4>
+          <div class="social-media" id="social-media">
+            <a href="https://www.linkedin.com/in/aslamrahmat/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/aslamfr"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
