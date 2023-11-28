@@ -11,6 +11,8 @@ const RENDER_EVENT = 'render-book';
 const SAVED_EVENT = 'saved-book';
 const STORAGE_KEY = 'BOOK_DATA';
 
+const bookTitle = []
+
 // Book ID generator
 function getBookId() {
   return +new Date();
@@ -82,7 +84,9 @@ function loadData() {
 function makeBookData(bookObject) {
   const { id, title, author, year, isComplete } = bookObject;
 
-  const textTitle = document.createElement('h2');
+  const textTitle = document.createElement('h3');
+  // textTitle.classList.add(`title_${title}`);
+  // textTitle.classList.add('book-title');
   textTitle.innerText = title;
 
   const textAuthor = document.createElement('p');
@@ -102,14 +106,14 @@ function makeBookData(bookObject) {
   if (isComplete) {
     const unreadButton = document.createElement('button');
     unreadButton.classList.add('green');
-    unreadButton.textContent = 'Belum selesai dibaca'
+    unreadButton.textContent = 'Move to unread'
     unreadButton.addEventListener('click', function () {
       moveBookToUnread(id);
     });
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('red');
-    deleteButton.textContent = 'Hapus buku'
+    deleteButton.textContent = 'Delete book'
     deleteButton.addEventListener('click', function () {
       removeBook(id);
     });
@@ -118,14 +122,14 @@ function makeBookData(bookObject) {
   } else {
     const readButton = document.createElement('button');
     readButton.classList.add('green');
-    readButton.textContent = 'Selesai dibaca'
+    readButton.textContent = 'Move to read'
     readButton.addEventListener('click', function () {
       moveBookToRead(id);
     });
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('red');
-    deleteButton.textContent = 'Hapus buku'
+    deleteButton.textContent = 'Delete book'
     deleteButton.addEventListener('click', function () {
       removeBook(id);
     });
@@ -141,7 +145,7 @@ function addBook() {
   const textBookTitle = document.getElementById('inputBookTitle').value;
   const textBookAuthor = document.getElementById('inputBookAuthor').value;
   const textBookYear = document.getElementById('inputBookYear').value;
-  const textBookIsComplete = document.getElementById('inputBookIsComplete').checked;
+  const textBookIsComplete = document.getElementById('inputBookIsComplete').checked; // get boolean value
   const bookId = getBookId();
 
   const bookObject = generateBookData(bookId, textBookTitle, textBookAuthor, textBookYear, textBookIsComplete);
@@ -184,6 +188,25 @@ function removeBook(bookId) {
   saveData();
 }
 
+// event listener for search book title
+document.getElementById('searchBookTitle').addEventListener("keyup", function (event) {
+  const searchBook = document.getElementById('searchBookTitle').value.toLowerCase();
+  const bookTitle = document.querySelectorAll('.book_item > h3');
+
+  for (let i = 0; i < bookTitle.length; i++) {
+    for (book of bookTitle) {
+      if (searchBook == "") {
+        bookTitle[i].style.backgroundColor = "white";
+      } else if (bookTitle[i].innerText.toLowerCase().includes(searchBook)) {
+        bookTitle[i].style.backgroundColor = "yellow";
+      } else {
+        bookTitle[i].style.backgroundColor = "white";
+      }
+    }
+  }
+});
+
+// event listener for submiting form and check browser storage support
 document.addEventListener('DOMContentLoaded', function () {
   const inputBook = document.getElementById('inputBook');
   inputBook.addEventListener('submit', function (event) {
@@ -196,10 +219,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// output to console
 document.addEventListener(SAVED_EVENT, () => {
   console.log('Data saved.');
 });
 
+// event listener for read, unread, and delete book
 document.addEventListener(RENDER_EVENT, function () {
   const unReadBook = document.getElementById('incompleteBookshelfList');
   const readBook = document.getElementById('completeBookshelfList');
