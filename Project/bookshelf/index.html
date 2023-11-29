@@ -7,9 +7,6 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Book Database</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,15 +23,15 @@
       <form id="inputBook">
         <div class="input">
           <label for="inputBookTitle">Title</label>
-          <input id="inputBookTitle" type="text" required>
+          <input id="inputBookTitle" type="text" placeholder="Title" required>
         </div>
         <div class="input">
           <label for="inputBookAuthor">Writer</label>
-          <input id="inputBookAuthor" type="text" required>
+          <input id="inputBookAuthor" type="text" placeholder="Writer" required>
         </div>
         <div class="input">
           <label for="inputBookYear">Year Published</label>
-          <input id="inputBookYear" type="number" required>
+          <input id="inputBookYear" type="number" min="1" max="2024" placeholder="Year" required>
         </div>
         <div class="input-checkbox">
           <label for="inputBookIsComplete">Finish Reading</label>
@@ -48,7 +45,7 @@
       <h2>Find Book</h2>
       <form id="searchBook">
         <label for="searchBookTitle">Title</label>
-        <input id="searchBookTitle" type="text">
+        <input id="searchBookTitle" type="text" placeholder="Book title">
       </form>
     </section>
 

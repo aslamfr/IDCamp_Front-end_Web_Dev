@@ -1,11 +1,3 @@
-// {
-//   id: string | number,
-//   title: string,
-//   author: string,
-//   year: number,
-//   isComplete: boolean,
-// }
-
 const books = [];
 const RENDER_EVENT = 'render-book';
 const SAVED_EVENT = 'saved-book';
@@ -158,7 +150,7 @@ function moveBookToUnread(bookId) {
   const bookTarget = findBook(bookId);
 
   if (bookTarget == null) return;
-
+  console.log(`Book ${bookId} move to unread.`);
   bookTarget.isComplete = false;
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveData();
@@ -169,7 +161,7 @@ function moveBookToRead(bookId) {
   const bookTarget = findBook(bookId);
 
   if (bookTarget == null) return;
-
+  console.log(`Book ${bookId} moved to read.`);
   bookTarget.isComplete = true;
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveData()
@@ -181,7 +173,14 @@ function removeBook(bookId) {
 
   if (bookTarget == -1) return;
 
-  books.splice(bookTarget, 1);
+  if (confirm("Confirm delete?")) {
+    books.splice(bookTarget, 1);
+    console.log(`Book ${bookId} deleted.`);
+  } else {
+    console.log("Delete canceled.");
+  }
+
+
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveData();
 }
