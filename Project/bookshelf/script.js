@@ -180,7 +180,6 @@ function removeBook(bookId) {
     console.log("Delete canceled.");
   }
 
-
   document.dispatchEvent(new Event(RENDER_EVENT));
   saveData();
 }
@@ -194,13 +193,10 @@ document.getElementById('searchBookTitle').addEventListener("keyup", function (e
     for (book of bookTitle) {
       if (searchBook == "") {
         bookTitle[i].parentElement.style.display = "";
-        // bookTitle[i].style.borderRadius = "0px";
       } else if (bookTitle[i].innerText.toLowerCase().includes(searchBook)) {
         bookTitle[i].parentElement.style.display = "";
-        // bookTitle[i].style.borderRadius = "5px";
       } else {
         bookTitle[i].parentElement.style.display = "none";
-        // bookTitle[i].style.borderRadius = "0px";
       }
     }
   }
