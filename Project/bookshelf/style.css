@@ -1,175 +1,196 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
-body, input, button {
-    font-family: 'Open Sans', sans-serif;
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* page title */
+.page-title {
+  margin: 20px auto;
+  padding: 12px;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-gap: 10px;
+  background-color: #7743DB;
+  border-radius: 50px;
+  color: white;
+}
+
+/* content */
+main {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* content card */
+.card {
+  border-radius: 20px;
+  background-color: #F1EAFF;
+  border: 0;
+}
+
+/* input */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.input-section h2 {
+  text-align: center;
+  color: #7743DB;
+}
+
+.input-section form .input {
+  margin: 8px 0;
+}
+
+.input-section form button {
+  background-color: #7743DB;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  width: 18%;
+  padding: 8px;
+  cursor: pointer;
+
+}
+
+.input-section form button {
+  font-weight: bold;
+}
+
+.input label {
+  color: #7743DB;
+  font-weight: bold;
+}
+
+.input input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #E5D4FF;
+}
+
+.input-checkbox {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.input-checkbox label {
+  color: #7743DB;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.input-checkbox input {
+  height: 25px;
+  width: 25px;
 }
 
 input, button {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-.head_bar {
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
+input:focus {
+  outline: none;
 }
 
-main {
-    max-width: 800px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 16px;
-
+/* search */
+.search-section {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
 }
 
-.input_section {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+.search-section h2 {
+  color: #7743DB;
 }
 
-.input_section > h2 {
-    text-align: center;
-    color: cornflowerblue;
+.search-section form {
+  padding: 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
 }
 
-.input_section > form > .input {
-    margin: 8px 0;
+.search-section form label {
+  display: flex;
+  align-items: center;
+  color: #7743DB;
+  font-weight: bold;
 }
 
-.input_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    padding: 8px;
-    cursor: pointer;
+.search-section form input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #E5D4FF;
 }
 
-.input_section > form > button > span {
-    font-weight: bold;
+/* book shelf */
+.book-shelf {
+  margin: 16px 0 0 0;
+  padding: 16px;
 }
 
-.input_section > form > .input > input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
+.book-shelf h2 {
+  padding: 0;
+  color: #7743DB;
 }
 
-
-.input_section > form > .input > label {
-    color: cornflowerblue;
-    font-weight: bold;
+.book-shelf .book-list {
+  padding: 0;
 }
 
-.input_section > form > .input_inline {
-    margin: 12px 0;
-    display: flex;
-    align-items: center;
+/* saved book */
+.book-item {
+  padding: 8px 16px 16px 16px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0 0 0;
 }
 
-.input_section > form > .input_inline > label {
-    color: cornflowerblue;
-    font-weight: bold;
-    margin-right: 10px;
+.book-item h3, p {
+  margin: 8px 0;
 }
 
-.search_section {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+.book-item .action button {
+  /* border: 0; */
+  padding: 5px 8px 5px 8px;
+  margin: 0 5px 0 0;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.search_section > h2 {
-    color: cornflowerblue;
+.book-item .action .move {
+  background-color: #7743DB;
+  border: 2px solid #7743DB;
+  color: white;
 }
 
-.search_section > form {
-    padding: 16px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 10px;
-}
-
-.search_section > form > label {
-    display: flex;
-    align-items: center;
-}
-
-.search_section > form > input {
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.search_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.book_shelf {
-    margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
-}
-
-.book_shelf > h2 {
-    color: cornflowerblue;
-}
-
-.book_shelf > .book_list {
-    padding: 16px;
-}
-
-.book_shelf > .book_list > .book_item {
-    padding: 8px 16px 16px 16px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-.book_shelf > .book_list > .book_item > h3, p {
-    margin: 8px 0;
-}
-
-.book_shelf > .book_list > .book_item > .action > button {
-    border: 0;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
-}
-
-.book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
-}
-
-.found {
-    background-color: yellow;
+.book-item .action .delete {
+  border: 2px solid #7743DB;
+  background-color: white;
+  color: #7743DB;
 }

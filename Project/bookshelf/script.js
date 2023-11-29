@@ -85,8 +85,6 @@ function makeBookData(bookObject) {
   const { id, title, author, year, isComplete } = bookObject;
 
   const textTitle = document.createElement('h3');
-  // textTitle.classList.add(`title_${title}`);
-  // textTitle.classList.add('book-title');
   textTitle.innerText = title;
 
   const textAuthor = document.createElement('p');
@@ -99,20 +97,20 @@ function makeBookData(bookObject) {
   actionButton.classList.add('action');
 
   const container = document.createElement('article');
-  container.classList.add('book_item');
+  container.classList.add('book-item');
   container.append(textTitle, textAuthor, textYear, actionButton);
   container.setAttribute('id', `${id}_book`);
 
   if (isComplete) {
     const unreadButton = document.createElement('button');
-    unreadButton.classList.add('green');
+    unreadButton.classList.add('move');
     unreadButton.textContent = 'Move to unread'
     unreadButton.addEventListener('click', function () {
       moveBookToUnread(id);
     });
 
     const deleteButton = document.createElement('button');
-    deleteButton.classList.add('red');
+    deleteButton.classList.add('delete');
     deleteButton.textContent = 'Delete book'
     deleteButton.addEventListener('click', function () {
       removeBook(id);
@@ -121,14 +119,14 @@ function makeBookData(bookObject) {
     actionButton.append(unreadButton, deleteButton);
   } else {
     const readButton = document.createElement('button');
-    readButton.classList.add('green');
+    readButton.classList.add('move');
     readButton.textContent = 'Move to read'
     readButton.addEventListener('click', function () {
       moveBookToRead(id);
     });
 
     const deleteButton = document.createElement('button');
-    deleteButton.classList.add('red');
+    deleteButton.classList.add('delete');
     deleteButton.textContent = 'Delete book'
     deleteButton.addEventListener('click', function () {
       removeBook(id);
@@ -191,16 +189,19 @@ function removeBook(bookId) {
 // event listener for search book title
 document.getElementById('searchBookTitle').addEventListener("keyup", function (event) {
   const searchBook = document.getElementById('searchBookTitle').value.toLowerCase();
-  const bookTitle = document.querySelectorAll('.book_item > h3');
+  const bookTitle = document.querySelectorAll('.book-item > h3');
 
   for (let i = 0; i < bookTitle.length; i++) {
     for (book of bookTitle) {
       if (searchBook == "") {
-        bookTitle[i].style.backgroundColor = "white";
+        bookTitle[i].parentElement.style.display = "";
+        // bookTitle[i].style.borderRadius = "0px";
       } else if (bookTitle[i].innerText.toLowerCase().includes(searchBook)) {
-        bookTitle[i].style.backgroundColor = "yellow";
+        bookTitle[i].parentElement.style.display = "";
+        // bookTitle[i].style.borderRadius = "5px";
       } else {
-        bookTitle[i].style.backgroundColor = "white";
+        bookTitle[i].parentElement.style.display = "none";
+        // bookTitle[i].style.borderRadius = "0px";
       }
     }
   }
