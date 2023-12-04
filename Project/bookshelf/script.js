@@ -134,7 +134,7 @@ function makeBookData(bookObject) {
 function addBook() {
   const textBookTitle = document.getElementById('inputBookTitle').value;
   const textBookAuthor = document.getElementById('inputBookAuthor').value;
-  const textBookYear = document.getElementById('inputBookYear').value;
+  const textBookYear = parseInt(document.getElementById('inputBookYear').value);
   const textBookIsComplete = document.getElementById('inputBookIsComplete').checked; // get boolean value
   const bookId = getBookId();
 
